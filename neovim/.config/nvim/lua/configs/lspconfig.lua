@@ -96,7 +96,7 @@ lspconfig.volar.setup {
 }
 -- typescript
 local ts_ft = { "javascript", "javascriptreact", "typescript", "typescriptreact" }
-local vue_ft = { table.unpack(ts_ft) }
+local vue_ft = { unpack(ts_ft) }
 table.insert(vue_ft, "vue")
 local volar_ts_plugin_path = vim.fn.stdpath("data") .. "/mason/packages/vue-language-server/node_modules/@vue/language-server";
 
