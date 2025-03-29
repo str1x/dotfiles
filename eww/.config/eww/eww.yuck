@@ -1,0 +1,34 @@
+(include "./variables.yuck")
+
+(defwindow bar
+  :monitor 0
+  :geometry (geometry
+    :x "0px"
+    :y "10px"
+    :width "100%"
+    :height "20px"
+    :anchor "bottom center"
+  )
+  :stacking "bg"
+  :exclusive true
+  :focusable false
+  (centerbox
+    :class "bar"
+    :orientation "horizontal"
+    (box
+      :class "bar_left"
+      :halign "start"
+      "Left"
+    )
+    (box
+      :class "bar_center"
+      :halign "center"
+      "Center"
+    )
+    (box
+      :class "bar_right"
+      :halign "end"
+      (systray)
+    )
+  )
+)

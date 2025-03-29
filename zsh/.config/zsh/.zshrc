@@ -7,3 +7,10 @@ alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
 alias g="git"
+
+autoload -Uz compinit promptinit
+compinit
+promptinit
+
+# This will set the default prompt to the walters theme
+prompt walters
