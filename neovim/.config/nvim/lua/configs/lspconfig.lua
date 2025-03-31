@@ -12,6 +12,8 @@ local on_init = function(client, _)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
+capabilities.workspace.didChangeWatchedFiles.relativePatternSupport = true
 capabilities.textDocument.completion.completionItem = {
   documentationFormat = { "markdown", "plaintext" },
   snippetSupport = true,
@@ -98,7 +100,7 @@ lspconfig.volar.setup {
 local ts_ft = { "javascript", "javascriptreact", "typescript", "typescriptreact" }
 local vue_ft = { unpack(ts_ft) }
 table.insert(vue_ft, "vue")
-local volar_ts_plugin_path = vim.fn.stdpath("data") .. "/mason/packages/vue-language-server/node_modules/@vue/language-server";
+local volar_ts_plugin_path = vim.fn.stdpath("data") .. "/mason/packages/vue-language-server/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin";
 
 lspconfig.ts_ls.setup {
   on_attach = on_attach,

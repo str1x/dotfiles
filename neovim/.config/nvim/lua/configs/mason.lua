@@ -15,8 +15,8 @@ return {
 
   ensure_installed = {
     "lua_ls",
-    "vue-language-server@2.2.0",
-    "typescript-language-server@4.3.3",
+    "vue-language-server@2.2.8",
+    "typescript-language-server@4.3.4",
     "eslint-lsp",
     "vscode-langservers-extracted",
     "clangd",
