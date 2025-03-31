@@ -1,0 +1,17 @@
+@use 'colors';
+@use 'font';
+
+Bar {
+  margin: 0 6px 6px 6px;
+  background: red;
+  color: colors.$fg-color;
+  font-family: font.$family; 
+  font-size: font.$size-normal;
+  font-weight: 400;
+}
+
+Bar_inner {
+  background: colors.$bg-color;
+  border-radius: 10px;
+  margin: 8px;
+}

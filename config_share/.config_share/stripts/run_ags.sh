@@ -1,0 +1,1 @@
+ags run --gtk4

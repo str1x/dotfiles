@@ -12,6 +12,8 @@ return {
     "vimdoc",
     "vue",
     "typescript",
+    "javascript",
+    "tsx",
     "css",
     "cmake",
     "cpp",

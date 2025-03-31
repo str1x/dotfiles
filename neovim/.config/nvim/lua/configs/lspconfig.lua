@@ -121,6 +121,10 @@ lspconfig.eslint.setup {
   on_init = on_init,
   capabilities = capabilities,
 }
+--css
+lspconfig.cssls.setup {
+  capabilities = capabilities,
+}
 --cpp
 lspconfig.clangd.setup {
   -- cmd = {

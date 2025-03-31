@@ -18,6 +18,7 @@ return {
     "vue-language-server@2.2.0",
     "typescript-language-server@4.3.3",
     "eslint-lsp",
+    "vscode-langservers-extracted",
     "clangd",
     "clang-format",
     "codelldb",
