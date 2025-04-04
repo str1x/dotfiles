@@ -5,9 +5,9 @@ const time = Variable('').poll(1000, ['date', '+%H:%M:%S']);
 
 export default () => {
   const { Box, Label } = Widget;
-  return <Box cssName='BarTime'>
+  return <Box cssName='BarMem'>
     <Label
-      cssName='BarTime_time'
+      cssName='BarMem_memory'
       label={time()}
     />
   </Box>;

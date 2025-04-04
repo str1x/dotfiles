@@ -1,5 +1,6 @@
 import { App, Astal, Gdk, Gtk, Widget } from 'astal/gtk4';
 
+import BarWorkspaces from '@/components/BarWorkspaces';
 import BarTime from '@/components/BarTime';
 import BarTray from '@/components/BarTray';
 
@@ -36,7 +37,9 @@ export default (gdkmonitor: Gdk.Monitor) => {
           cssName='Bar_center'
           halign={Gtk.Align.CENTER}
         >
-          Center
+          <BarWorkspaces
+            monitor={gdkmonitor}
+          />
         </Box>
       }
       end_widget={

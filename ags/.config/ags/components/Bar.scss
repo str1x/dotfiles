@@ -1,17 +1,27 @@
-@use 'colors';
 @use 'font';
+@use 'space';
 
 Bar {
   margin: 0 6px 6px 6px;
-  background: red;
-  color: colors.$fg-color;
   font-family: font.$family; 
   font-size: font.$size-normal;
   font-weight: 400;
+  background-color: transparent;
+
+  &_inner {
+
+  }
+
+  &_left > *,
+  &_center > *,
+  &_right > * {
+    margin: 0 space.$small;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 }
 
-Bar_inner {
-  background: colors.$bg-color;
-  border-radius: 10px;
-  margin: 8px;
-}

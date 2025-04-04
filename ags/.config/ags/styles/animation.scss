@@ -1,0 +1,6 @@
+$ease: cubic-bezier(.66,.27,.38,1.23);
+$duration: 200ms;
+
+@mixin animate {
+  transition: $duration $ease;
+}

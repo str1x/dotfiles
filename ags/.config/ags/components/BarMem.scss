@@ -1,15 +1,16 @@
 @use 'color';
 @use 'border';
+@use 'font';
 @use 'space';
 
-BarTray {
+BarMem {
   padding: space.$normal;
   color: color.$fg-default;
   background-color: color.$bg-dim;
   border: border.$width solid color.$fg-green;
   border-radius: border.$radius;
 
-  &_item:not(:last-child) {
-    margin-right: space.$normal;
+  &_memory {
+    font-size: font.$size-large;
   }
 }

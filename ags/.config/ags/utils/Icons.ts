@@ -30,3 +30,10 @@ export const power = "\udb81\udc25";
 
 // Generic Application
 export const application = "\udb82\udcc6";
+
+// Workspaces
+export const workspaces = {
+  'special:work': '\udb82\udf31',
+  'special:favorite': '\ue623',
+  'special:other': '\udb84\udf82',
+} as const;

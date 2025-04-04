@@ -1,0 +1,31 @@
+@use 'color';
+@use 'border';
+@use 'font';
+@use 'space';
+@use 'animation';
+
+BarWorkspaces {
+  color: color.$fg-default;
+  background-color: color.$bg-dim;
+  border: border.$width solid color.$fg-green;
+  border-radius: border.$radius;
+
+  &_workspace {
+    @include animation.animate;
+    padding: 0 space.$normal;
+    font-size: font.$size-large;
+    transform: scale(1) translate(0);
+    color: color.$fg-default;
+    transition-property: transform, color;
+
+    &.special {
+      padding: space.$normal;
+      font-size: 24px;
+    }
+
+    &.active {
+      transform: scale(1.3);
+      color: color.$fg-green;
+    }
+  }
+}

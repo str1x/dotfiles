@@ -53,7 +53,7 @@ g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
 
 -- spell
-opt.spell = true
+opt.spell = false
 opt.spelllang = { "en_us", 'ru_ru' }
 
 -- add binaries installed by mason.nvim to path

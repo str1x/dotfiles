@@ -1,0 +1,16 @@
+@use 'color';
+@use 'border';
+@use 'font';
+@use 'space';
+
+BarTime {
+  padding: space.$normal;
+  color: color.$fg-default;
+  background-color: color.$bg-dim;
+  border: border.$width solid color.$fg-green;
+  border-radius: border.$radius;
+
+  &_time {
+    font-size: font.$size-large;
+  }
+}
