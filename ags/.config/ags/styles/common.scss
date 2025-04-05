@@ -1,0 +1,61 @@
+@use 'color';
+
+// ****
+// opacity
+// ****
+$opacity: 0.6;
+
+// ****
+// borders
+// ****
+$border-radius: 4px;
+$border-width: 1px;
+
+@mixin border {
+  border: $border-width solid rgba(color.$bg-green, $opacity); 
+  border-radius: $border-radius;
+}
+
+// ****
+// animation
+// ****
+$animation-ease: cubic-bezier(.66,.27,.38,1.23);
+$animation-duration: 200ms;
+
+@mixin transition-ease {
+  transition: $animation-duration $animation-ease;
+}
+
+// ****
+// font
+// ****
+$font-family: 'Hasklug Nerd Font Mono';
+$font-size: 12px;
+$font-size-large: 16px;
+$font-size-icon: 24px;
+
+// ****
+// spacing
+// ****
+$space-small: 2px;
+$space-normal: 4px;
+$space-large: 8px;
+
+@mixin padding {
+  padding: $space-normal;
+}
+
+@mixin padding-x {
+  padding: 0 $space-normal;
+}
+
+// ****
+// bar
+// ****
+
+@mixin bar-block {
+  @include border;
+  @include padding-x;
+  color: color.$fg-default;
+  background-color: rgba(color.$bg-dim, $opacity);
+}

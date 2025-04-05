@@ -31,6 +31,10 @@ export const power = "\udb81\udc25";
 // Generic Application
 export const application = "\udb82\udcc6";
 
+export const ramMemory = '\udb80\udf5b';
+export const cpu = '\uf4bc';
+export const time = '\ue641';
+
 // Workspaces
 export const workspaces = {
   'special:work': '\udb82\udf31',

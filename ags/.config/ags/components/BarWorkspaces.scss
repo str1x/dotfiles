@@ -1,31 +1,55 @@
 @use 'color';
-@use 'border';
-@use 'font';
-@use 'space';
-@use 'animation';
+@use 'common';
+
+$base: 'BarWorkspaces';
 
 BarWorkspaces {
+  @include common.border;
   color: color.$fg-default;
-  background-color: color.$bg-dim;
-  border: border.$width solid color.$fg-green;
-  border-radius: border.$radius;
+  background-color: rgba(color.$bg-dim, common.$opacity);
+
+  &_special {
+    border-right: 1px solid rgba(color.$bg-green, common.$opacity);
+  }
+
+  &_normal {
+
+  }
 
   &_workspace {
-    @include animation.animate;
-    padding: 0 space.$normal;
-    font-size: font.$size-large;
-    transform: scale(1) translate(0);
-    color: color.$fg-default;
-    transition-property: transform, color;
-
-    &.special {
-      padding: space.$normal;
-      font-size: 24px;
-    }
+    @include common.padding-x;
+    @include common.transition-ease;
+    transition-property: background-color;
 
     &.active {
-      transform: scale(1.3);
-      color: color.$fg-green;
+      background-color: rgba(color.$bg-bg5, common.$opacity);
+    }
+
+    &.normal {
+      font-size: common.$font-size-large;
+      color: color.$fg-default;
+      &.active {
+        color: color.$fg-green;
+      }
+    }
+
+    &.special {
+      font-size: common.$font-size-icon;
+      color: color.$fg-grey2;
+      &.active {
+        color: color.$fg-purple;
+      }
+    }
+
+    & > #{$base}_label {
+      @include common.transition-ease;
+      transition-property: transform, color;
+      transform: scale(1) translate(0);
+    }
+
+    &.active > #{$base}_label {
+      transform: scale(1.3) translate(0);
     }
   }
+
 }

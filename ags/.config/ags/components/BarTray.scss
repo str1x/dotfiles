@@ -1,15 +1,11 @@
 @use 'color';
-@use 'border';
-@use 'space';
+@use 'common';
 
 BarTray {
-  padding: space.$normal;
-  color: color.$fg-default;
-  background-color: color.$bg-dim;
-  border: border.$width solid color.$fg-green;
-  border-radius: border.$radius;
-
-  &_item:not(:last-child) {
-    margin-right: space.$normal;
+  @include common.bar-block;
+  
+  &_item {
+    @include common.padding-x;
+    color: color.$fg-aqua;
   }
 }

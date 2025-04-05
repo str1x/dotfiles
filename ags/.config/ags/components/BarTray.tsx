@@ -18,8 +18,6 @@ export default () => {
         onClicked={() => item.activate(2, 2)}
         tooltip_text={item.get_title()}
         cssName='BarTray_item'
-        width_request={30}
-        height_request={30}
       >
         { iconName !== null ? <Image iconName={iconName}/> : <Label label={Icons.application}/> }
       </Button>;

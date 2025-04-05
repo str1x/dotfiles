@@ -1,11 +1,23 @@
 import { Widget } from 'astal/gtk4'
 import { Variable } from 'astal'
-
-const time = Variable('').poll(1000, ['date', '+%H:%M:%S']);
+import { Icons } from '@/utils';
 
 export default () => {
   const { Box, Label } = Widget;
-  return <Box cssName='BarTime'>
+  const time = Variable('')
+    .poll(1000, ['date', '+%H:%M:%S']);
+  const onDestroy = () => {
+    time.drop();
+  };
+
+  return <Box
+    cssName='BarTime'
+    onDestroy={onDestroy}
+  >
+    <Label
+      cssName='BarTime_icon'
+      label={Icons.time}
+    />  
     <Label
       cssName='BarTime_time'
       label={time()}

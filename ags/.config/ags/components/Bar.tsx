@@ -3,6 +3,8 @@ import { App, Astal, Gdk, Gtk, Widget } from 'astal/gtk4';
 import BarWorkspaces from '@/components/BarWorkspaces';
 import BarTime from '@/components/BarTime';
 import BarTray from '@/components/BarTray';
+import BarMem from '@/components/BarMem';
+import BarCpu from '@/components/BarCpu';
 
 export default (gdkmonitor: Gdk.Monitor) => {
   const { BOTTOM, LEFT, RIGHT } = Astal.WindowAnchor;
@@ -20,6 +22,7 @@ export default (gdkmonitor: Gdk.Monitor) => {
     anchor={BOTTOM | LEFT | RIGHT}
     application={App}
     layer={Astal.Layer.BOTTOM}
+    height_request={20}
   >
     <CenterBox
       cssName='Bar_inner'
@@ -29,7 +32,8 @@ export default (gdkmonitor: Gdk.Monitor) => {
           cssName='Bar_left'
           halign={Gtk.Align.START}
         >
-          Left
+          <BarMem/>
+          <BarCpu/>
         </Box>
       }
       center_widget={

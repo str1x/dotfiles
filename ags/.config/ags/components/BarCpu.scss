@@ -1,16 +1,16 @@
 @use 'color';
 @use 'common';
 
-BarMem {
+BarCpu {
   @include common.bar-block;
-  color: color.$fg-orange;
+  color: color.$fg-yellow;
 
   &_icon {
     @include common.padding-x;
     font-size: common.$font-size-icon;
   }
 
-  &_memory {
+  &_value {
     @include common.padding-x;
     font-size: common.$font-size-large;
   }

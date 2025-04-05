@@ -1,10 +1,9 @@
-@use 'font';
-@use 'space';
+@use 'common';
 
 Bar {
   margin: 0 6px 6px 6px;
-  font-family: font.$family; 
-  font-size: font.$size-normal;
+  font-family: common.$font-family; 
+  font-size: common.$font-size;
   font-weight: 400;
   background-color: transparent;
 
@@ -15,7 +14,7 @@ Bar {
   &_left > *,
   &_center > *,
   &_right > * {
-    margin: 0 space.$small;
+    margin: 0 common.$space-small;
     &:first-child {
       margin-left: 0;
     }

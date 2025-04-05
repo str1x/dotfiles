@@ -1,16 +1,17 @@
 @use 'color';
-@use 'border';
-@use 'font';
-@use 'space';
+@use 'common';
 
 BarTime {
-  padding: space.$normal;
-  color: color.$fg-default;
-  background-color: color.$bg-dim;
-  border: border.$width solid color.$fg-green;
-  border-radius: border.$radius;
+  @include common.bar-block;
+  color: color.$fg-aqua;
+
+  &_icon {
+    @include common.padding-x;
+    font-size: common.$font-size-icon;
+  }
 
   &_time {
-    font-size: font.$size-large;
+    @include common.padding-x;
+    font-size: common.$font-size-large;
   }
 }
