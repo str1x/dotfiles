@@ -1,27 +1,35 @@
-import { Widget } from 'astal/gtk4';
+import { Widget, Gtk } from 'astal/gtk4';
 import Tray from 'gi://AstalTray';
-import Apps from 'gi://AstalApps';
 import { bind } from 'astal'
 
-import { Icons } from '@/utils';
+const TrayItem = (item: Tray.TrayItem) => {
+  const { MenuButton, Image, Popover } = Widget;
 
-const tray = Tray.get_default();
-const apps = new Apps.Apps();
+  const popover = Gtk.PopoverMenu.new_from_model(item.menu_model);
+  popover.insert_action_group('dbusmenu', item.actionGroup)
+
+  return <MenuButton
+    tooltip_text={item.tooltip_markup}
+    cssName='BarTray_item'
+    hasFrame={false}
+    canShrink={true}
+    primary={true}
+    popover={popover}
+  >
+    <Image
+      gicon={item.gicon}
+      cssName='BarTray_item_icon'
+    />
+  </MenuButton>;
+};
 
 export default () => {
-  const { Box, Label, Button, Image } = Widget;
-  const trayButtons = bind(tray, 'items').as(items =>
-    items.map((item) => {
-      const app = apps.fuzzy_query(item.get_title())[0];
-      const iconName = app.get_icon_name();
-      return <Button
-        onClicked={() => item.activate(2, 2)}
-        tooltip_text={item.get_title()}
-        cssName='BarTray_item'
-      >
-        { iconName !== null ? <Image iconName={iconName}/> : <Label label={Icons.application}/> }
-      </Button>;
-    }));
+  const tray = Tray.get_default();
 
-  return <Box cssName='BarTray'>{trayButtons}</Box>;
+  const { Box } = Widget;
+  const trayItems = bind(tray, 'items');
+
+  return <Box cssName='BarTray'>
+    { trayItems.as(trayItems => trayItems.map(TrayItem))}
+  </Box>;
 }

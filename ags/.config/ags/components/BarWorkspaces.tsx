@@ -84,7 +84,7 @@ export default (props: { monitor: Gdk.Monitor }) => {
         const specialWss = wss
           .filter(ws => ws.get().isSpecial)
           .sort((a, b) => a.get().id - b.get().id)
-        if (specialWss.length === 0) return;
+        if (specialWss.length === 0) return [];
         return <Box cssName='BarWorkspaces_special'>
           { specialWss.map(WorkspaceItem)} 
         </Box>

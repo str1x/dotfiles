@@ -27,6 +27,7 @@ export default (gdkmonitor: Gdk.Monitor) => {
     <CenterBox
       cssName='Bar_inner'
       hexpand
+      valign={Gtk.Align.CENTER}
       start_widget={
         <Box
           cssName='Bar_left'

@@ -7,5 +7,16 @@ BarTray {
   &_item {
     @include common.padding-x;
     color: color.$fg-aqua;
+    cursor: pointer;
+
+    & > * {
+      background-color: transparent;
+      padding: 0;
+    }
+
+
+    &_icon  {
+
+    }
   }
 }
