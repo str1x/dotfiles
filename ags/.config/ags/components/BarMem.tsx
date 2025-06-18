@@ -11,7 +11,7 @@ export default () => {
     swapTotal: 0,
     swapUsed: 0,
     swapUsedPercent: 0,
-  }).poll(2000, 'free', out => {
+  }).poll(5000, 'free', out => {
     const lines = out.split('\n');
     const ramLine = lines.find(line => line.startsWith('Mem:')) ?? '';
     const swapLine = lines.find(line => line.startsWith('Swap:')) ?? '';

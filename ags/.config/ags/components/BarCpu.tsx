@@ -6,7 +6,7 @@ const command = "top -bn 2 -d 0.01 | grep '^%Cpu' | tail -n 1 | gawk '{print $2+
 
 export default () => {
   const { Box, Label } = Widget;
-  const cpu = Variable(0).poll(2000, ['sh', '-c', command], out => parseInt(out));
+  const cpu = Variable(0).poll(5000, ['sh', '-c', command], out => parseInt(out));
 
   const onDestroy = () => {
     cpu.drop();
