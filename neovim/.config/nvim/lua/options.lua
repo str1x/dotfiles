@@ -65,7 +65,7 @@ vim.env.PATH = table.concat({ vim.fn.stdpath "data", "mason", "bin" }, sep) .. d
 vim.o.cursorlineopt = "number,line"
 
 opt.foldmethod = "expr"
-opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldexpr = "v:lua.vim.lsp.foldexpr()"
 opt.foldenable = false
 opt.relativenumber = true
 opt.termguicolors = true -- True color support

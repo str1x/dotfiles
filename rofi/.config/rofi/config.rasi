@@ -1,7 +1,7 @@
 /*****----- Configuration -----*****/
 configuration {
   font: "Hasklug Nerd Font Mono 12";
-	modi:                       "drun,run,filebrowser,window,networks,screenshot";
+	modi:                       "drun,run,filebrowser,window,networks,screenshot,power";
     show-icons:                 true;
     display-drun:               "";
     display-run:                "";
@@ -9,6 +9,7 @@ configuration {
     display-window:             "";
     display-networks:           "";
     display-screenshot:         "󰹑";
+    display-power:              "";
 	drun-display-format:        "{name}";
 	window-format:              "{w} · {c} · {t}";
 }
