@@ -21,11 +21,13 @@
      modules = [
      	nvf.nixosModules.default
        ./configuration.nix
+       home-manager.nixosModules.home-manager
+       {
+         home-manager.useGlobalPkgs = true;
+         home-manager.useUserPackages = true;
+         home-manager.users.pepe = import ./home;
+       }
      ];
-   };
-
-   homeComfigurations.pepe = home-manager.lib.homeManagerConfiguration {
-     modules = [ ./home ];
    };
   };
 }
