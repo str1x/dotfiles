@@ -6,12 +6,14 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware.nix
+      ./modules/nvf
     ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.configurationLimit = 10;
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Use latest kernel.
@@ -69,9 +71,6 @@
   users.users.pepe = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-		# packages = with pkgs; [
-		#   tree
-		# ];
   };
 
   # programs.firefox.enable = true;
@@ -80,6 +79,12 @@
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 1w";
+  };
+  nix.settings.auto-optimise-store = true;
   environment.systemPackages = with pkgs; [
     btop
     neovim
