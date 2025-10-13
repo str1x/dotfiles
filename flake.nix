@@ -7,19 +7,13 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # obsidian-nvim.url = "github:epwalsh/obsidian.nvim";
-    nvf = {
-      url = "github:NotAShelf/nvf";
-      inputs.nixpkgs.follows = "nixpkgs";
-      # inputs.obsidian-nvim.follows = "obsidian-nvim"; # <- this will use the obsidian-nvim from your inputs
-    };
-
+    nix-nvim.url = "github:str1x/nix-nvim";
   };
 
-  outputs = { nixpkgs, home-manager, nvf, ... } @ inputs: {
+  outputs = { nixpkgs, home-manager, nix-nvim, ... } @ inputs: {
    nixosConfigurations.PepeOS = nixpkgs.lib.nixosSystem {
      modules = [
-     	nvf.nixosModules.default
+       nix-nvim.nixosModules.default
        ./configuration.nix
        home-manager.nixosModules.home-manager
        {

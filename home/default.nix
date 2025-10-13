@@ -14,6 +14,9 @@
     enable = true;
     userName = "Max Green";
     userEmail = "strixdevelop@gmail.ru";
+    extraConfig = {
+      core.editor = "vim";
+    };
   };
 
   # starship - an customizable prompt for any shell
