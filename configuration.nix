@@ -3,9 +3,12 @@
 
 { config, lib, pkgs, inputs, ... }:
 
-{ imports =
+{
+  imports =
     [
-      ./hardware.nix ];
+      ./hardware.nix
+      ./modules/bluetooth
+    ];
 
   nixCats = {
     enable = true;
@@ -55,7 +58,8 @@
   };
 
   # programs.firefox.enable = true;
-  programs.hyprland.enable = true; programs.ssh.startAgent = true;
+  programs.hyprland.enable = true;
+  programs.ssh.startAgent = true;
 
   # List packages installed in system profile. You can use https://search.nixos.org/ to find more packages (and options).
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -64,6 +68,7 @@
   };
   nix.settings.auto-optimise-store = true;
   environment.systemPackages = with pkgs; [
+    wl-clipboard
     btop
     # neovim
     wget kitty lact git google-chrome

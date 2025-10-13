@@ -9,21 +9,38 @@
     neofetch
   ];
 
-  # basic configuration of git, please change to your own
-  programs.git = {
+  programs.ssh = {
     enable = true;
-    userName = "Max Green";
-    userEmail = "strixdevelop@gmail.ru";
-    extraConfig = {
-      core.editor = "vim";
-    };
-  };
+    extraConfig = ''
+      AddKeysToAgent yes
 
-  # starship - an customizable prompt for any shell
-  programs.starship = {
-    enable = true;
-    # custom settings
-    settings = {
+      Host github.com
+      # allow to securely use local SSH agent to authenticate on the remote machine.
+      # It has the same effect as adding cli option `ssh -A user@host`
+      ForwardAgent yes
+      # romantic holds my homelab~
+      IdentityFile ~/.ssh/id_github_ed25519
+      # Specifies that ssh should only use the identity file explicitly configured above
+      # required to prevent sending default identity files first.
+      IdentitiesOnly yes 
+     '';
+   };
+ 
+   # basic configuration of git, please change to your own
+   programs.git = {
+     enable = true;
+     userName = "Max Green";
+     userEmail = "strixdevelop@gmail.ru";
+     extraConfig = {
+       core.editor = "vim";
+     };
+   };
+ 
+   # starship - an customizable prompt for any shell
+   programs.starship = {
+     enable = true;
+     # custom settings
+     settings = {
       add_newline = false;
       aws.disabled = true;
       gcloud.disabled = true;
