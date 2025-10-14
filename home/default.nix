@@ -4,10 +4,21 @@
   home.username = "pepe";
   home.homeDirectory = "/home/pepe";
 
+  # wayland.windowManager.hyprland.enable = true;
+
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     neofetch
   ];
+
+  programs.waybar = {
+    enable = true;
+    settings = [{
+      layer = "bottom";
+      position = "bottom";
+      modules-left = ["tray" "clock"];
+    }];
+  };
 
   programs.ssh = {
     enable = true;

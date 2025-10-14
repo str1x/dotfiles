@@ -7,7 +7,10 @@
   imports =
     [
       ./hardware.nix
+      ./modules/dm
+      ./modules/networking
       ./modules/bluetooth
+      ./modules/hyprland
     ];
 
   nixCats = {
@@ -19,12 +22,6 @@
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  # Define your hostname.
-  networking.hostName = "PepeOS";
-  # Pick only one of the below networking options. networking.wireless.enable = true; # Enables wireless support via 
-  # wpa_supplicant. Easiest to use and most distros use this by default.
-  networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Moscow";
@@ -54,11 +51,12 @@
   # Enable touchpad support (enabled default in most desktopManager). services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.pepe = { isNormalUser = true; extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+  users.users.pepe = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
   };
 
   # programs.firefox.enable = true;
-  programs.hyprland.enable = true;
   programs.ssh.startAgent = true;
 
   # List packages installed in system profile. You can use https://search.nixos.org/ to find more packages (and options).
