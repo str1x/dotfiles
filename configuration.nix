@@ -1,12 +1,13 @@
 # Edit this configuration file to define what should be installed on your system. Help is available in the configuration.nix(5) man 
 # page, on https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, inputs, ... }:
+{ lib, pkgs, ... }:
 
 {
   imports =
     [
       ./hardware.nix
+      ./modules/plymouth
       ./modules/dm
       ./modules/networking
       ./modules/bluetooth
@@ -17,8 +18,9 @@
     enable = true;
   };
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true; boot.loader.systemd-boot.configurationLimit = 10; boot.loader.efi.canTouchEfiVariables = 
-  true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.configurationLimit = 10;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -27,6 +29,20 @@
   time.timeZone = "Europe/Moscow";
 
   nixpkgs.config.allowUnfree = true;
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "nodejs-v22.16.0"
+  ];
+
+  # nixpkgs.config.allowInsecurePredicate = pkg:
+  #   builtins.elem (lib.getName pkg) [
+  #     "nodejs-v"
+  #   ];
+
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+     fnm # Add fnm here
+  ];
 
   # Configure network proxy if necessary networking.proxy.default = "http://user:password@proxy:port/"; networking.proxy.noProxy = 
   # "127.0.0.1,localhost,internal.domain";
@@ -62,7 +78,9 @@
   # List packages installed in system profile. You can use https://search.nixos.org/ to find more packages (and options).
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nix.gc = {
-    automatic = true; dates = "weekly"; options = "--delete-older-than 1w";
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 1w";
   };
   nix.settings.auto-optimise-store = true;
   environment.systemPackages = with pkgs; [
@@ -73,7 +91,8 @@
   ]; environment.variables.EDITOR = "nvim";
 
   # LACT
-  systemd.packages = with pkgs; [ lact ]; systemd.services.lactd.wantedBy = ["multi-user.target"];
+  systemd.packages = with pkgs; [ lact ];
+  systemd.services.lactd.wantedBy = ["multi-user.target"];
 
   # Some programs need SUID wrappers, can be configured further or are started in user sessions. programs.mtr.enable = true; 
   # programs.gnupg.agent = {

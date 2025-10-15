@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   home.username = "pepe";
@@ -9,7 +9,19 @@
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     neofetch
+    rofi
+    fnm
   ];
+
+  home.file."${config.xdg.configHome}/rofi" = {
+    source = ../old-configs/rofi/.config/rofi;
+    recursive = true;
+  };
+
+  home.file."${config.xdg.configHome}/hypr" = {
+    source = ./hyprland;
+    recursive = true;
+  };
 
   programs.waybar = {
     enable = true;
@@ -26,13 +38,13 @@
       AddKeysToAgent yes
 
       Host github.com
-      # allow to securely use local SSH agent to authenticate on the remote machine.
-      # It has the same effect as adding cli option `ssh -A user@host`
       ForwardAgent yes
-      # romantic holds my homelab~
       IdentityFile ~/.ssh/id_github_ed25519
-      # Specifies that ssh should only use the identity file explicitly configured above
-      # required to prevent sending default identity files first.
+      IdentitiesOnly yes 
+
+      Host *
+      ForwardAgent yes
+      IdentityFile ~/.ssh/id_ed25519_work
       IdentitiesOnly yes 
      '';
    };
@@ -62,6 +74,9 @@
   programs.bash = {
     enable = true;
     enableCompletion = true;
+    initExtra = ''
+      eval "$(fnm env --use-on-cd --shell bash)"
+    '';
   };
 
   home.stateVersion = "25.05";
