@@ -44,6 +44,15 @@
      fnm # Add fnm here
   ];
 
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true; # if not already enabled
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+  };
+
   # Configure network proxy if necessary networking.proxy.default = "http://user:password@proxy:port/"; networking.proxy.noProxy = 
   # "127.0.0.1,localhost,internal.domain";
 
@@ -87,7 +96,13 @@
     wl-clipboard
     btop
     # neovim
-    wget kitty lact git google-chrome
+    wget
+    kitty
+    lact
+    pwvucontrol
+    easyeffects
+    git
+    google-chrome
   ]; environment.variables.EDITOR = "nvim";
 
   # LACT

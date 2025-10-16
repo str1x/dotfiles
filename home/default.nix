@@ -8,9 +8,12 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
+    fd
     neofetch
     rofi
     fnm
+    lazygit
+    telegram-desktop
   ];
 
   home.file."${config.xdg.configHome}/rofi" = {
@@ -21,6 +24,10 @@
   home.file."${config.xdg.configHome}/hypr" = {
     source = ./hyprland;
     recursive = true;
+  };
+
+  services.swaync = {
+    enable = true;
   };
 
   programs.waybar = {
