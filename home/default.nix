@@ -14,6 +14,7 @@
     fnm
     lazygit
     telegram-desktop
+    dbeaver-bin
   ];
 
   home.file."${config.xdg.configHome}/rofi" = {
@@ -23,6 +24,11 @@
 
   home.file."${config.xdg.configHome}/hypr" = {
     source = ./hyprland;
+    recursive = true;
+  };
+
+  home.file."${config.xdg.configHome}/kitty" = {
+    source = ./kitty;
     recursive = true;
   };
 

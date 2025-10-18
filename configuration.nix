@@ -12,6 +12,7 @@
       ./modules/networking
       ./modules/bluetooth
       ./modules/hyprland
+      # ./modules/amnezia-vpn
     ];
 
   nixCats = {
@@ -61,6 +62,10 @@
   # };
 
   # Enable the X11 windowing system. services.xserver.enable = true;
+
+  fonts.packages = with pkgs; [
+    nerd-fonts.hasklug
+  ];
 
 
   
