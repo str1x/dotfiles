@@ -89,6 +89,11 @@
   # programs.firefox.enable = true;
   programs.ssh.startAgent = true;
 
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
+
   # List packages installed in system profile. You can use https://search.nixos.org/ to find more packages (and options).
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nix.gc = {
@@ -108,7 +113,8 @@
     easyeffects
     git
     google-chrome
-  ]; environment.variables.EDITOR = "nvim";
+  ];
+  environment.variables.EDITOR = "vim";
 
   # LACT
   systemd.packages = with pkgs; [ lact ];

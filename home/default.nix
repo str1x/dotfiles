@@ -4,6 +4,10 @@
   home.username = "pepe";
   home.homeDirectory = "/home/pepe";
 
+  imports = [
+    ./pachca
+  ];
+
   # wayland.windowManager.hyprland.enable = true;
 
   # Packages that should be installed to the user profile.
@@ -15,6 +19,7 @@
     lazygit
     telegram-desktop
     dbeaver-bin
+    # yandex-music
   ];
 
   home.file."${config.xdg.configHome}/rofi" = {
