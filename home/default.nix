@@ -6,31 +6,18 @@
 
   imports = [
     ./pachca
+    ./hyprland
+    ./rofi
   ];
-
-  # wayland.windowManager.hyprland.enable = true;
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-    fd
     neofetch
-    rofi
     fnm
     lazygit
     telegram-desktop
     dbeaver-bin
-    # yandex-music
   ];
-
-  home.file."${config.xdg.configHome}/rofi" = {
-    source = ../old-configs/rofi/.config/rofi;
-    recursive = true;
-  };
-
-  home.file."${config.xdg.configHome}/hypr" = {
-    source = ./hyprland;
-    recursive = true;
-  };
 
   home.file."${config.xdg.configHome}/kitty" = {
     source = ./kitty;
