@@ -7,6 +7,7 @@
   imports = [
     ./pachca
     ./hyprland
+    ./waybar
     ./rofi
   ];
 
@@ -17,6 +18,7 @@
     lazygit
     telegram-desktop
     dbeaver-bin
+    sysbench
   ];
 
   home.file."${config.xdg.configHome}/kitty" = {
@@ -26,15 +28,6 @@
 
   services.swaync = {
     enable = true;
-  };
-
-  programs.waybar = {
-    enable = true;
-    settings = [{
-      layer = "bottom";
-      position = "bottom";
-      modules-left = ["tray" "clock"];
-    }];
   };
 
   programs.ssh = {
