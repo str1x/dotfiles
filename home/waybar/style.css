@@ -1,0 +1,73 @@
+@define-color bg-dim-5 #B9C0AB;
+@define-color bg-dim #E5DFC5;
+@define-color bg-visual #EAEDC8;
+@define-color bg-yellow #FAEDCD;
+@define-color bg-blue #E9F0E9;
+@define-color fg-default #5C6A72;
+@define-color fg-green #8DA101;
+@define-color fg-blue #3A94C5;
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: Hasklug Nerd Font Mono;
+  font-weight: 400;
+  font-size: 14px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: transparent;
+}
+
+winfow#waybar > * {
+  padding: 20px;
+}
+
+.modules-left {
+  padding-left: 8px;
+  padding-bottom: 8px;
+}
+.modules-center {
+  padding-bottom: 8px;
+}
+.modules-right {
+  padding-right: 8px;
+  padding-bottom: 8px;
+}
+
+.module {
+  background-color: alpha(@bg-dim, 0.8);
+  color: @fg-default;
+  border-radius: 8px;
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+#temps,
+#load-stats,
+#info
+{
+  margin-left: 8px;
+  border-radius: 12px;
+  background: alpha(@bg-yellow, 0.85);
+}
+#temps:hover,
+#load-stats:hover,
+#info:hover
+{
+  background: alpha(@bg-visual, 0.85);
+}
+#temps .module,
+#load-stats .module,
+#info .module
+{
+  border-radius: 0;
+  background: transparent;
+}
+#temps .drawer-child,
+#load-stats .drawer-child,
+#info .drawer-child
+{
+  border-left: 1px solid @bg-dim-5;
+}

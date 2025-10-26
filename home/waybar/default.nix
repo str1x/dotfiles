@@ -1,28 +1,65 @@
-{
+{ ... }: {
   programs.waybar = {
     enable = true;
+    style = builtins.readFile ./style.css;
     settings = [
       {
+        height = 10;
         layer = "bottom";
         position = "bottom";
 
-        modules-left = ["tray" "clock" "hyprland/language"];
+        modules-left = [
+          "group/info"
+        ];
 
         modules-center = ["hyprland/workspaces"];
 
         modules-right = [
-          "cpu"
-          "memory"
-          "temperature#cpu"
-          "temperature#cpu-ccd1"
-          "temperature#cpu-ccd2"
-          "temperature#gpu"
-          "temperature#gpu-junction"
-          "temperature#gpu-mem"
-          "temperature#nvme"
-          "temperature#mem-1"
-          "temperature#mem-2"
+          "group/load-stats"
+          "group/temps"
         ];
+
+
+        "group/info" = {
+          orientation = "horizontal";
+          modules = [
+            "tray"
+            "clock"
+            "hyprland/language"
+          ];
+        };
+
+        "group/load-stats" = {
+          orientation = "horizontal";
+          drawer = {
+            transition-duration = 500;
+          };
+          modules = [
+            "cpu"
+            "memory"
+          ];
+        };
+
+        "group/temps" = {
+          orientation = "horizontal";
+          drawer = {
+            # children-class = "not-light";
+            transition-duration = 500;
+            # transition-left-to-right = true;
+            # click-to-reveal = true;
+          };
+          modules = [
+            "temperature#cpu"
+            "temperature#cpu-ccd1"
+            "temperature#cpu-ccd2"
+            "temperature#gpu"
+            "temperature#gpu-junction"
+            "temperature#gpu-mem"
+            "temperature#nvme"
+            "temperature#mem-1"
+            "temperature#mem-2"
+          ];
+        };
 
         "hyprland/workspaces" = {
           show-special = true;
