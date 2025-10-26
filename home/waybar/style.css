@@ -46,28 +46,25 @@ winfow#waybar > * {
 
 #temps,
 #load-stats,
-#info
+#info,
+#workspaces
 {
   margin-left: 8px;
   border-radius: 12px;
-  background: alpha(@bg-yellow, 0.85);
+  background: alpha(@bg-yellow, 0.75);
 }
-#temps:hover,
-#load-stats:hover,
-#info:hover
-{
-  background: alpha(@bg-visual, 0.85);
-}
+
 #temps .module,
 #load-stats .module,
 #info .module
 {
   border-radius: 0;
-  background: transparent;
+  background-color: transparent;
 }
+
 #temps .drawer-child,
 #load-stats .drawer-child,
-#info .drawer-child
+#info > *:not(:first-child) > .module
 {
   border-left: 1px solid @bg-dim-5;
 }

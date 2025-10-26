@@ -5,7 +5,7 @@
     settings = [
       {
         height = 10;
-        layer = "bottom";
+        layer = "top";
         position = "bottom";
 
         modules-left = [
@@ -33,6 +33,7 @@
           orientation = "horizontal";
           drawer = {
             transition-duration = 500;
+            click-to-reveal = true;
           };
           modules = [
             "cpu"
@@ -43,10 +44,8 @@
         "group/temps" = {
           orientation = "horizontal";
           drawer = {
-            # children-class = "not-light";
             transition-duration = 500;
-            # transition-left-to-right = true;
-            # click-to-reveal = true;
+            click-to-reveal = true;
           };
           modules = [
             "temperature#cpu"
@@ -63,6 +62,11 @@
 
         "hyprland/workspaces" = {
           show-special = true;
+          format = "{icon}: {windows}";
+          workspace-taskbar = {
+            enable = true;
+            icon-theme = ["Adwaita" "hicolor"];
+          };
         };
 
         "hyprland/language" = {
