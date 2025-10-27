@@ -88,7 +88,7 @@
         };
 
         "temperature#cpu" = {
-          hwmon-path = "/sys/class/hwmon/hwmon3/temp1_input";
+          hwmon-path = "/sys/class/hwmon/hwmon2/temp1_input";
           critical-threshold = 90;
           format = "  {temperatureC}°C";
           tooltip = true;
@@ -96,7 +96,7 @@
         };
 
         "temperature#cpu-ccd1" = {
-          hwmon-path = "/sys/class/hwmon/hwmon3/temp3_input";
+          hwmon-path = "/sys/class/hwmon/hwmon2/temp3_input";
           critical-threshold = 80;
           format = "  {temperatureC}°C";
           tooltip = true;
@@ -104,7 +104,7 @@
         };
 
         "temperature#cpu-ccd2" = {
-          hwmon-path = "/sys/class/hwmon/hwmon3/temp4_input";
+          hwmon-path = "/sys/class/hwmon/hwmon2/temp4_input";
           critical-threshold = 80;
           format = "  {temperatureC}°C";
           tooltip = true;
@@ -136,7 +136,7 @@
         };
 
         "temperature#nvme" = {
-          hwmon-path = "/sys/class/hwmon/hwmon2/temp1_input";
+          hwmon-path = "/sys/class/hwmon/hwmon1/temp1_input";
           critical-threshold = 60;
           format = "󰋊  {temperatureC}°C";
           tooltip = true;
@@ -144,7 +144,7 @@
         };
 
         "temperature#mem-1" = {
-          hwmon-path = "/sys/class/hwmon/hwmon4/temp1_input";
+          hwmon-path = "/sys/class/hwmon/hwmon3/temp1_input";
           critical-threshold = 60;
           format = "  {temperatureC}°C";
           tooltip = true;
@@ -152,7 +152,7 @@
         };
 
         "temperature#mem-2" = {
-          hwmon-path = "/sys/class/hwmon/hwmon5/temp1_input";
+          hwmon-path = "/sys/class/hwmon/hwmon4/temp1_input";
           critical-threshold = 60;
           format = "  {temperatureC}°C";
           tooltip = true;
