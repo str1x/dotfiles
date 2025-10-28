@@ -4,7 +4,7 @@
     style = builtins.readFile ./style.css;
     settings = [
       {
-        height = 10;
+        height = 34;
         layer = "top";
         position = "bottom";
 
@@ -60,6 +60,16 @@
           ];
         };
 
+        tray = {
+          icon-size = 18;
+          spacing = 10;
+        };
+
+        clock = {
+          format = " {:%H:%M}";
+          tooltip-format = "<tt><small>{calendar}</small></tt>";
+        };
+
         "hyprland/workspaces" = {
           show-special = true;
           format = "{icon}: {windows}";
@@ -77,20 +87,20 @@
 
         cpu = {
           interval = 30;
-          format = "  {}%";
+          format = " {}%";
           max-length = 10;
         };
 
         memory = {
           interval = 30;
-          format = "  {}%";
+          format = " {}%";
           max-length = 10;
         };
 
         "temperature#cpu" = {
           hwmon-path = "/sys/class/hwmon/hwmon2/temp1_input";
           critical-threshold = 90;
-          format = "  {temperatureC}°C";
+          format = " {temperatureC}°C";
           tooltip = true;
           tooltip-format = "Tctl";
         };
@@ -98,7 +108,7 @@
         "temperature#cpu-ccd1" = {
           hwmon-path = "/sys/class/hwmon/hwmon2/temp3_input";
           critical-threshold = 80;
-          format = "  {temperatureC}°C";
+          format = " {temperatureC}°C";
           tooltip = true;
           tooltip-format = "Tccd1";
         };
@@ -106,7 +116,7 @@
         "temperature#cpu-ccd2" = {
           hwmon-path = "/sys/class/hwmon/hwmon2/temp4_input";
           critical-threshold = 80;
-          format = "  {temperatureC}°C";
+          format = " {temperatureC}°C";
           tooltip = true;
           tooltip-format = "Tccd2";
         };
@@ -114,7 +124,7 @@
         "temperature#gpu" = {
           hwmon-path = "/sys/class/hwmon/hwmon0/temp1_input";
           critical-threshold = 85;
-          format = "󰤽  {temperatureC}°C";
+          format = "󰤽 {temperatureC}°C";
           tooltip = true;
           tooltip-format = "GPU edge";
         };
@@ -122,7 +132,7 @@
         "temperature#gpu-junction" = {
           hwmon-path = "/sys/class/hwmon/hwmon0/temp2_input";
           critical-threshold = 95;
-          format = "  {temperatureC}°C";
+          format = " {temperatureC}°C";
           tooltip = true;
           tooltip-format = "GPU junction";
         };
@@ -130,7 +140,7 @@
         "temperature#gpu-mem" = {
           hwmon-path = "/sys/class/hwmon/hwmon0/temp3_input";
           critical-threshold = 80;
-          format = "  {temperatureC}°C";
+          format = " {temperatureC}°C";
           tooltip = true;
           tooltip-format = "GPU mem";
         };
@@ -138,7 +148,7 @@
         "temperature#nvme" = {
           hwmon-path = "/sys/class/hwmon/hwmon1/temp1_input";
           critical-threshold = 60;
-          format = "󰋊  {temperatureC}°C";
+          format = "󰋊 {temperatureC}°C";
           tooltip = true;
           tooltip-format = "nvme";
         };
@@ -146,7 +156,7 @@
         "temperature#mem-1" = {
           hwmon-path = "/sys/class/hwmon/hwmon3/temp1_input";
           critical-threshold = 60;
-          format = "  {temperatureC}°C";
+          format = " {temperatureC}°C";
           tooltip = true;
           tooltip-format = "RAM 1";
         };
@@ -154,7 +164,7 @@
         "temperature#mem-2" = {
           hwmon-path = "/sys/class/hwmon/hwmon4/temp1_input";
           critical-threshold = 60;
-          format = "  {temperatureC}°C";
+          format = " {temperatureC}°C";
           tooltip = true;
           tooltip-format = "RAM 2";
         };

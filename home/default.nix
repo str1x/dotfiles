@@ -19,6 +19,7 @@
     telegram-desktop
     dbeaver-bin
     sysbench
+    zenmonitor
   ];
 
   home.file."${config.xdg.configHome}/kitty" = {
