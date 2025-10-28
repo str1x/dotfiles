@@ -75,7 +75,8 @@
       "icon-theme": [
         "Adwaita",
         "hicolor"
-      ]
+      ],
+      "icon-size": 18
     }
   },
 
