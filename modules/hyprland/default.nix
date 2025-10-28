@@ -3,7 +3,4 @@
     enable = true;
     withUWSM = true;
   };
-  programs.waybar = {
-    enable = true;
-  };
 }
