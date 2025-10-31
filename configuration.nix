@@ -43,13 +43,25 @@
     jack.enable = true;
   };
 
+  virtualisation.docker = {
+    enable = true;
+    storageDriver = "btrfs";
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
+  };
+
   fonts.packages = with pkgs; [
     nerd-fonts.hasklug
   ];
 
   users.users.pepe = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+    ];
   };
 
   programs.ssh.startAgent = true;

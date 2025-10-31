@@ -9,6 +9,7 @@
     ./hyprland
     ./waybar
     ./rofi
+    ./wallpapers
   ];
 
   # Packages that should be installed to the user profile.
@@ -20,6 +21,7 @@
     dbeaver-bin
     sysbench
     zenmonitor
+    gnumake
   ];
 
   home.file."${config.xdg.configHome}/kitty" = {
