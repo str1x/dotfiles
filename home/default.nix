@@ -22,6 +22,7 @@
     sysbench
     zenmonitor
     gnumake
+    insomnia
   ];
 
   home.file."${config.xdg.configHome}/kitty" = {
