@@ -23,6 +23,7 @@
     zenmonitor
     gnumake
     insomnia
+    showmethekey
   ];
 
   home.file."${config.xdg.configHome}/kitty" = {
