@@ -24,6 +24,7 @@
     gnumake
     insomnia
     showmethekey
+    obsidian
   ];
 
   home.file."${config.xdg.configHome}/kitty" = {
