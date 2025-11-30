@@ -8,6 +8,7 @@
       ./modules/bluetooth
       ./modules/hyprland
       # ./modules/amnezia-vpn
+      ./modules/clang
     ];
 
   nixCats = {
