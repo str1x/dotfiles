@@ -5,15 +5,16 @@
       layout = "us";
       variant = "";
     };
-    displayManager = {
-      autoLogin = {
-        enable = true;
-        user = "pepe";
-      };
-      gdm = {
-        enable = true;
-        wayland = true;
-      };
+  };
+
+  services.displayManager = {
+    autoLogin = {
+      enable = true;
+      user = "pepe";
+    };
+    gdm = {
+      enable = true;
+      wayland = true;
     };
   };
 }

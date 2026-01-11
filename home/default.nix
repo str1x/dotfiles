@@ -25,6 +25,7 @@
     insomnia
     showmethekey
     obsidian
+    yandex-music
   ];
 
   home.file."${config.xdg.configHome}/kitty" = {
@@ -53,12 +54,11 @@
      '';
    };
  
-   # basic configuration of git, please change to your own
    programs.git = {
      enable = true;
-     userName = "Max Green";
-     userEmail = "strixdevelop@gmail.ru";
-     extraConfig = {
+     settings = {
+       user.name = "Max Green";
+       user.email = "strixdevelop@gmail.ru";
        core.editor = "vim";
      };
    };

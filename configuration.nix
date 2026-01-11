@@ -103,7 +103,7 @@
 
   systemd.services.lactd.wantedBy = ["multi-user.target"];
 
-  system.stateVersion = "25.05"; # Did you read the comment?
+  system.stateVersion = "25.05"; # Did you read the comment? TODO: fix warning
 
 }
 
