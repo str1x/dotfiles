@@ -3,7 +3,7 @@
   version = "latest";
   src = pkgs.fetchurl {
     url = "https://install.pachca.com/linux/appImage/x64";
-    sha256 = "sha256-I9OsAbWUIxqszbSTKOSkY7bgIHOo3b/aMuTy7PJUYto=";
+    sha256 = "sha256-hbH+jXbiyQ7vi3Oo7wIp2KyCNcMlbGxGYjAsW+kDst8=";
   };
   appimageContents = pkgs.appimageTools.extract {inherit pname version src;};
 in {
