@@ -89,6 +89,8 @@
     wget
     kitty
     lact
+    hardinfo2
+    dmidecode
     pwvucontrol
     easyeffects
     git
