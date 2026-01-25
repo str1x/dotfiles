@@ -88,7 +88,7 @@
     enable = true;
     iconTheme = {
       package = pkgs.papirus-icon-theme; # Example icon package
-      name = "Papirus"; # Name of the theme
+      name = "Papirus-Light"; # Name of the theme
     };
   };
 
