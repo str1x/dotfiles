@@ -95,6 +95,7 @@
     easyeffects
     git
     google-chrome
+    nix-tree
   ];
 
   environment.variables.EDITOR = "vim";
