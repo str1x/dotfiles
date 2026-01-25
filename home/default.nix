@@ -14,6 +14,7 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
+    yazi
     neofetch
     fnm
     lazygit
@@ -81,6 +82,14 @@
     initExtra = ''
       eval "$(fnm env --use-on-cd --shell bash)"
     '';
+  };
+
+  gtk = {
+    enable = true;
+    iconTheme = {
+      package = pkgs.papirus-icon-theme; # Example icon package
+      name = "Papirus"; # Name of the theme
+    };
   };
 
   home.stateVersion = "25.05";
