@@ -9,6 +9,7 @@
       ./modules/hyprland
       # ./modules/amnezia-vpn
       ./modules/clang
+      ./modules/steam
     ];
 
   nixCats = {
