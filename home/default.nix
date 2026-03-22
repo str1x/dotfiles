@@ -27,6 +27,7 @@
     showmethekey
     obsidian
     yandex-music
+    libreoffice
   ];
 
   home.file."${config.xdg.configHome}/kitty" = {
