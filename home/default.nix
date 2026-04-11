@@ -10,6 +10,7 @@
     ./waybar
     ./rofi
     ./wallpapers
+    ./lazysql
   ];
 
   # Packages that should be installed to the user profile.

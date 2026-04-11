@@ -73,7 +73,10 @@
     binfmt = true;
   };
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   nix.gc = {
     automatic = true;
@@ -97,6 +100,7 @@
     git
     google-chrome
     nix-tree
+    jq
   ];
 
   environment.variables.EDITOR = "vim";
