@@ -103,7 +103,11 @@
     jq
   ];
 
-  environment.variables.EDITOR = "vim";
+  environment.variables = {
+    EDITOR = "vim";
+    # TODO move to home manager
+    SQL_EDITOR = lib.mkDefault "vim";
+  };
 
   systemd.packages = with pkgs; [ lact ];
 
