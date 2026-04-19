@@ -1,0 +1,12 @@
+[opener]
+chrome = [
+  { run = 'google-chrome-stable "$@"', desc = "chrome", orphan = true }
+]
+libreoffice = [
+  { run = 'libreoffice %S', desc = "libreoffice", orphan = true }
+]
+
+[open]
+prepend_rules = [
+  { mime = "application/pdf", use = [ "chrome", "libreoffice" ]}
+]

@@ -11,11 +11,11 @@
     ./rofi
     ./wallpapers
     ./lazysql
+    ./yazi
   ];
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-    yazi
     neofetch
     fnm
     lazygit
