@@ -29,6 +29,7 @@
     obsidian
     yandex-music
     libreoffice
+    prismlauncher
   ];
 
   home.file."${config.xdg.configHome}/kitty" = {

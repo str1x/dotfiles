@@ -8,7 +8,7 @@
       ./modules/bluetooth
       ./modules/hyprland
       # ./modules/amnezia-vpn
-      ./modules/clang
+      # ./modules/clang
       ./modules/steam
     ];
 
