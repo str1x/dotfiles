@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   programs.gamescope = {
     enable = true;
-    capSysNice = true;
+    capSysNice = false; # fix for nixos 26.05
   };
   programs.steam = {
     enable = true;
