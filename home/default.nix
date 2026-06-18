@@ -16,7 +16,8 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-    # neofetch
+    fastfetch
+    ncdu
     fnm
     lazygit
     telegram-desktop
