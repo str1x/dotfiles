@@ -10,6 +10,7 @@
       # ./modules/amnezia-vpn
       # ./modules/clang
       ./modules/steam
+      ./modules/logitech
     ];
 
   nixCats = {
