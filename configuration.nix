@@ -45,6 +45,8 @@
     pulse.enable = true;
     jack.enable = true;
   };
+  # Enable Keychron udev rules for configuration apps and WebHID
+  services.udev.packages = [ pkgs.keychron-udev-rules ];
 
   virtualisation.docker = {
     enable = true;
@@ -52,6 +54,9 @@
     rootless = {
       enable = true;
       setSocketVariable = true;
+      daemon.settings = {
+        dns = [ "1.1.1.1" "8.8.8.8" ];
+      };
     };
   };
 
@@ -102,6 +107,7 @@
     google-chrome
     nix-tree
     jq
+    mtr
   ];
 
   environment.variables = {
