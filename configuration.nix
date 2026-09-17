@@ -48,6 +48,20 @@
   # Enable Keychron udev rules for configuration apps and WebHID
   services.udev.packages = [ pkgs.keychron-udev-rules ];
 
+  # Enable network printers
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+  services.printing = {
+    enable = true;
+    drivers = with pkgs; [
+      cups-filters
+      cups-browsed
+    ];
+  };
+
   virtualisation.docker = {
     enable = true;
     storageDriver = "btrfs";
