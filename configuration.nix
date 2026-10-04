@@ -11,6 +11,7 @@
       # ./modules/clang
       ./modules/steam
       ./modules/logitech
+      ./modules/ollama
     ];
 
   nixCats = {
