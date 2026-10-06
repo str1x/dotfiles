@@ -21,7 +21,7 @@ marker_cut = { fg = "#e8a2af", bg = "#e8a2af" }      # Soft red
 # Tab
 tab_active = { fg = "#2c313a", bg = "#d3c6aa" }   # Dark background, Soft beige foreground
 tab_inactive = { fg = "#a7c080", bg = "#434c5e" } # Soft Green on muted dark
-tab_width = 1
+# tab_width = 1
 
 # Border
 border_symbol = "│"
@@ -138,8 +138,8 @@ rules = [
   { mime = "application/x-rar", fg = "#e8a2af" },           # Soft red
 
   # Fallback
-  { name = "*", fg = "#d3c6aa" },  # Soft beige
-  { name = "*/", fg = "#d3c6aa" }, # Soft beige
+  { url = "*", fg = "#d3c6aa" },  # Soft beige
+  { url = "*/", fg = "#d3c6aa" }, # Soft beige
 ]
 
 # : }}}
