@@ -32,6 +32,7 @@
     libreoffice
     prismlauncher
     rustup
+    gcc
   ];
 
   home.file."${config.xdg.configHome}/kitty" = {
