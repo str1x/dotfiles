@@ -31,6 +31,7 @@
     yandex-music
     libreoffice
     prismlauncher
+    rustup
   ];
 
   home.file."${config.xdg.configHome}/kitty" = {
@@ -40,6 +41,11 @@
 
   services.swaync = {
     enable = true;
+  };
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
   };
 
   programs.ssh = {
