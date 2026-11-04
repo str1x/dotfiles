@@ -7,6 +7,7 @@
       ./modules/networking
       ./modules/bluetooth
       ./modules/hyprland
+      ./modules/entropy
       # ./modules/amnezia-vpn
       # ./modules/clang
       ./modules/steam
@@ -84,6 +85,7 @@
     extraGroups = [
       "wheel"
       "networkmanager"
+      "entropy"
     ];
   };
 
